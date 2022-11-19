@@ -27,8 +27,8 @@ public class ZonaDaMata extends AppCompatActivity {
 
         listZonaDaMata.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(), "Escolheu: " + pontosDeDescarte.get(i).toString(), Toast.LENGTH_SHORT).show();
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Toast.makeText(ZonaDaMata.this, "Escolheu: " + pontosDeDescarte.get(position).toString(), Toast.LENGTH_LONG).show();
             }
         });
     }

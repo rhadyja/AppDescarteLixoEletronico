@@ -2,6 +2,7 @@ package com.example.appdescarte;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -28,7 +29,17 @@ public class Agreste extends AppCompatActivity {
         listAgreste.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Toast.makeText(Agreste.this, "Escolheu: "+position, Toast.LENGTH_LONG).show();
+                if(position == 0){
+                    Intent intent1 = new Intent(Agreste.this, AgresteWebView.class);
+                    startActivity(intent1);
+                }
+                else if(position == 1){
+                    Intent intent2 = new Intent(Agreste.this, MainActivity.class);
+                    startActivity(intent2);
+                }
+                else{
+                    Toast.makeText(Agreste.this, "Inválido", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
