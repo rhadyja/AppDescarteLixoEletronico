@@ -28,7 +28,7 @@ public class Agreste extends AppCompatActivity {
         listAgreste.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Toast.makeText(Agreste.this, "clicou", Toast.LENGTH_LONG).show();
+                Toast.makeText(Agreste.this, "Escolheu: "+position.toString(), Toast.LENGTH_LONG).show();
             }
         });
     }
