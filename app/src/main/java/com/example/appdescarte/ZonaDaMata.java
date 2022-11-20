@@ -2,6 +2,7 @@ package com.example.appdescarte;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -28,15 +29,24 @@ public class ZonaDaMata extends AppCompatActivity {
         listZonaDaMata.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Toast.makeText(ZonaDaMata.this, "Escolheu: " + pontosDeDescarte.get(position).toString(), Toast.LENGTH_LONG).show();
+                if(position == 0){
+                    Intent intent1 = new Intent(ZonaDaMata.this, AgresteWebView.class);
+                    startActivity(intent1);
+                }
+                else if(position == 1){
+                    Intent intent2 = new Intent(ZonaDaMata.this, MainActivity.class);
+                    startActivity(intent2);
+                }
+                else{
+                    Toast.makeText(ZonaDaMata.this, "Inválido", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
 
     private ArrayList<String> preencherDados(){
         ArrayList<String> dados = new ArrayList<String>();
-        dados.add("Caruaru");
-        dados.add("Limoeiro");
+        dados.add("Paudalho");
         return dados;
     }
 }

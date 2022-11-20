@@ -25,6 +25,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        buttonZonaDaMata.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ZonaDaMata.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
